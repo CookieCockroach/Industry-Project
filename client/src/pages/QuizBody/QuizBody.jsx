@@ -36,11 +36,11 @@ const QuizPage = () => {
       });
   }, [category]);
 
-  // const checkIfAnsweredToday = () => {
-  //   const lastAnsweredDate = localStorage.getItem("lastAnsweredDate");
-  //   const today = new Date().toISOString().split("T")[0];
-  //   setHasAnsweredToday(lastAnsweredDate === today);
-  // };
+  const checkIfAnsweredToday = () => {
+    const lastAnsweredDate = localStorage.getItem("lastAnsweredDate");
+    const today = new Date().toISOString().split("T")[0];
+    setHasAnsweredToday(lastAnsweredDate === today);
+  };
 
   const handleAnswerClick = (answer) => {
     setSelectedAnswer(answer);
