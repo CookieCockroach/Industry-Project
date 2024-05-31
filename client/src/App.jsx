@@ -8,17 +8,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/track" element={<Tracker />} />
-      </Routes>
-    </BrowserRouter>
-  )
-    <BrowserRouter>
-      <Routes>
         <Route exact path="/" element={<Categories />} />
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/tracker" element={<Tracker />} />
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
   );
 }
 export default App;

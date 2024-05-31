@@ -1,4 +1,49 @@
-.chart{
-    height:24px;
-    width:25%
-}
+* {
+    box-sizing: border-box;
+    font-family: "Avenir next", " Arial", " sans-serif";
+    margin: 0;
+    padding: 0;
+  }
+ img{
+    width:20em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ } 
+
+.tracker{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &__days{
+        margin-top:2em;
+        margin-left: 1em;
+        margin-right: 1em;
+        padding:1.2em;
+        font-size: 0.8em;
+        font-weight:100;
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: rows;
+        flex-wrap: wrap;
+      } 
+        &__motive{
+            text-align: center;
+            margin-top: 1em;
+        }
+        &__align{
+            display: flex;
+            justify-content: center;
+        button{
+            width:80px;
+            font-weight: 600;
+            font-size: 1em;
+            margin-top: 1em;
+            background-color: goldenrod;
+            border:transparent;
+            border-radius: 10%;
+        }
+      } 
+    }
