@@ -1,16 +1,27 @@
-const express = require('express')
-const app = express()
-require('dotenv').config()
-const port = process.env.PORT || 8080
-const cors = require('cors')
+const express = require('express');
+const cors = require('cors');
+const fs = require('fs');
+const path = require('path');
 
-app.use(cors())
-app.use(express.json())
+const app = express();
+const port = 8080;
 
-app.put('/tracker', (req, res) => {
-  res.send('Hello World!')}
-)
+app.use(cors());
+
+let questions = [];
+
+fs.readFile(path.join(__dirname, 'questions.json'), 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading questions file:', err);
+    return;
+  }
+  questions = JSON.parse(data);
+});
+
+app.get('/api/questions', (req, res) => {
+  res.json(questions);
+});
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
-})
+});
