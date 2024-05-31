@@ -7,7 +7,9 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.json())
 
-
+app.put('/tracker', (req, res) => {
+  res.send('Hello World!')}
+)
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
