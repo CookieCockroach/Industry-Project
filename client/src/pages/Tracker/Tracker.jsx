@@ -1,26 +1,35 @@
-import React from "react";
-import Image from '../../assets/wealth.png'
-import '../Tracker/Tracker.scss'
-import Days from '../../assets/data/Tracker.json'
+import React, { useEffect, useState } from "react";
 import Day from "../../components/day";
+import "./Tracker.scss";
+import axios from "axios";
 
 // const Tracker = () => {
 
-function Tracker(){
+const [days, setDays] = useState()
+
+async function getData() {
+    const response = await axios.get("/api/days");
+    console.log(response.data)
+    setDays(response.data)
+}
+
+useEffect(() => {
+    getData()
+}, [])
+
+if(!days){
+    return <div>Loading...</div>
+}
 
     return (
-        <div className="tracker">
-            <img src={Image} alt="Wealth Logo"></img>
-               <div className="tracker__days">
-                  {Days.map((day) => (
-                  <Day key={day.id} day={day} />
-                  ))}
-                </div>
-            <h2 className="tracker__motive">Going strong !!</h2>
-            <div className="tracker__align">
-            <button>Exit</button>     
-            </div>     
-          </div>
+        <div>
+            <h1>Wealthsimple</h1>
+            {days.map((day) => (
+                <Day key={day.id} day={day} />
+            ))}
+            <h2>"Financial success is not about luck; it's about managing risks, making informed decisions, and persistently pursuing your goals."</h2>
+            <button>Exit</button>
+        </div>
     );
 };
 export default Tracker;
