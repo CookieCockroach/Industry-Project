@@ -3,7 +3,7 @@ import Day from "../../components/day";
 import "./Tracker.scss";
 import axios from "axios";
 
-// const Tracker = () => {
+const Tracker = () => {
 
 const [days, setDays] = useState()
 
