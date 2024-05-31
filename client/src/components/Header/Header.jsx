@@ -6,7 +6,12 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        <img src={logo} className="header__logo" />
+        <Link to={"/"}>
+          <img src={logo} className="header__logo" />
+        </Link>
+        <NavLink to={"/tracker"} className="header__tracker">
+          <button className="header__tracker-button">Game History</button>
+        </NavLink>
       </div>
     </>
   );
