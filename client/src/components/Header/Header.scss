@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: #f8f9fa;
+  padding: 0 2rem;
+  &__logo {
+    height: 34px;
+    margin: 1rem;
+  }
+  &__tracker {
+    text-decoration: none;
+    &-button {
+      margin: 1rem;
+      font-weight: 600;
+      background-color: #fcfcfc;
+      border: 0.1rem solid #32302f;
+      color: #32302f;
+      border-radius: 30px;
+      min-width: 4rem;
+      min-height: 2rem;
+      padding: 0.5rem;
+    }
+  }
+}

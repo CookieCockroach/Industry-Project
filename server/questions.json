@@ -1,0 +1,51 @@
+[
+    {
+      "category": "investment",
+      "question": "What is a stock?",
+      "answers": ["A type of bond", "A share of ownership in a company", "A financial derivative", "A type of insurance"],
+      "correctAnswer": "A share of ownership in a company"
+    },
+    {
+      "category": "investment",
+      "question": "What is an ETF?",
+      "answers": ["Exchange-Traded Fund", "Electronic Transfer Fund", "Equity Traded Fund", "Earnings Transfer Fund"],
+      "correctAnswer": "Exchange-Traded Fund"
+    },
+    {
+      "category": "budgeting",
+      "question": "What is the 50/30/20 rule?",
+      "answers": ["A diet plan", "A budgeting rule", "An investment strategy", "A tax saving method"],
+      "correctAnswer": "A budgeting rule"
+    },
+    {
+      "category": "budgeting",
+      "question": "Which is a fixed expense?",
+      "answers": ["Groceries", "Electricity bill", "Rent", "Dining out"],
+      "correctAnswer": "Rent"
+    },
+    {
+      "category": "taxes",
+      "question": "What is a tax deduction?",
+      "answers": ["A penalty for late payment", "An amount subtracted from taxable income", "A type of tax", "A refund from the government"],
+      "correctAnswer": "An amount subtracted from taxable income"
+    },
+    {
+      "category": "taxes",
+      "question": "When is the tax filing deadline in Canada?",
+      "answers": ["March 1", "April 30", "June 15", "December 31"],
+      "correctAnswer": "April 30"
+    },
+    {
+      "category": "retirement planning",
+      "question": "What is an RRSP?",
+      "answers": ["Registered Retirement Savings Plan", "Real Estate Savings Plan", "Risk Reduction Savings Plan", "Retirement Risk Savings Plan"],
+      "correctAnswer": "Registered Retirement Savings Plan"
+    },
+    {
+      "category": "retirement planning",
+      "question": "At what age can you start withdrawing from an RRSP without penalty?",
+      "answers": ["55", "60", "65", "71"],
+      "correctAnswer": "71"
+    }
+  ]
+  
