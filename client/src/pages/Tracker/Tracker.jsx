@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Day from "../../components/day";
+import "./Tracker.scss";
 import axios from "axios";
 
 const Tracker = () => {
