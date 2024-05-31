@@ -1,7 +1,8 @@
+import '../components/days.scss'
 export default function Day({day}){
     return(
-        <div>
-            <h1>{`Day${day.id}`}</h1>
+        <div className="days">
+            <h2>{`Day${day.id}`}</h2>
             <p>{day.result}</p>
         </div>
     )
