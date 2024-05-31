@@ -98,14 +98,14 @@ const QuizPage = () => {
           </div>
         </div>
       </div>
-      {hasAnsweredToday && !showAnswer && (
+      {/* {hasAnsweredToday && !showAnswer && (
         <div className="answer-feedback">
           <p>
             You have already answered today's question. Come back tomorrow for a
             new question!
           </p>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
