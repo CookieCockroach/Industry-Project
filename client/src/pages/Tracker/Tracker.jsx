@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Day from "../../components/day";
 import "./Tracker.scss";
 import axios from "axios";
@@ -30,7 +31,9 @@ const Tracker = () => {
             </div>
             <h2 className="tracker__motive">"Financial success is not about luck; it's about managing risks, making informed decisions, and persistently pursuing your goals."</h2>
             <div className="tracker__align">
+                <Link to="/">
                 <button>Exit</button>
+                </Link>
             </div>
         </div>
     );
