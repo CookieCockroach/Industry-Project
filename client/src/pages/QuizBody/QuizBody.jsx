@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-import { Card, Button } from "react-bootstrap";
 import "./QuizBody.scss";
 
 const QuizPage = () => {
@@ -57,42 +56,37 @@ const QuizPage = () => {
 
   return (
     <div className="quiz-page">
-      <h2>Category: {category}</h2>
+      <h2 className="quiz-page__category">Category: {category}</h2>
       <div className={`quiz-card ${showAnswer ? "flipped" : ""}`}>
         <div className="quiz-card-inner">
           <div className="quiz-card-front">
-            <Card>
-              <Card.Body>
-                <Card.Title>{currentQuestion.question}</Card.Title>
-                <div className="answers">
-                  {currentQuestion.answers.map((answer, index) => (
-                    <Button
-                      key={index}
-                      variant="outline-primary"
-                      onClick={() => handleAnswerClick(answer)}
-                      disabled={showAnswer || hasAnsweredToday}
-                    >
-                      {answer}
-                    </Button>
-                  ))}
-                </div>
-              </Card.Body>
-            </Card>
+            <div>
+              <h3>{currentQuestion.question}</h3>
+              <div className="answers">
+                {currentQuestion.answers.map((answer, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleAnswerClick(answer)}
+                    disabled={showAnswer || hasAnsweredToday}
+                  >
+                    {answer}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="quiz-card-back">
-            <Card>
-              <Card.Body>
-                <Card.Title>Answer</Card.Title>
-                <div className="answer-feedback">
-                  <p>
-                    {selectedAnswer === currentQuestion.correctAnswer
-                      ? "Correct!"
-                      : `Incorrect! The correct answer is: ${currentQuestion.correctAnswer}`}
-                  </p>
-                  <p>Come back tomorrow for the next question!</p>
-                </div>
-              </Card.Body>
-            </Card>
+            <div>
+              <h3>Answer</h3>
+              <div className="answer-feedback">
+                <p>
+                  {selectedAnswer === currentQuestion.correctAnswer
+                    ? "Correct!"
+                    : `Incorrect. The correct answer is: ${currentQuestion.correctAnswer}`}
+                </p>
+                <p>Come back tomorrow for the next question!</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -8,6 +8,10 @@
   text-align: center;
   padding: 20px;
 
+  &__category {
+    text-transform: uppercase;
+  }
+
   h2 {
     margin-bottom: 20px;
   }
