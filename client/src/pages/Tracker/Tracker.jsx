@@ -5,30 +5,33 @@ import axios from "axios";
 
 const Tracker = () => {
 
-const [days, setDays] = useState()
+    const [days, setDays] = useState()
 
-async function getData() {
-    const response = await axios.get("/api/days");
-    console.log(response.data)
-    setDays(response.data)
-}
+    async function getData() {
+        const response = await axios.get("/api/days");
+        console.log(response.data)
+        setDays(response.data)
+    }
 
-useEffect(() => {
-    getData()
-}, [])
+    useEffect(() => {
+        getData()
+    }, [])
 
-if(!days){
-    return <div>Loading...</div>
-}
+    if (!days) {
+        return <div>Loading...</div>
+    }
 
     return (
-        <div>
-            <h1>Wealthsimple</h1>
-            {days.map((day) => (
-                <Day key={day.id} day={day} />
-            ))}
-            <h2>"Financial success is not about luck; it's about managing risks, making informed decisions, and persistently pursuing your goals."</h2>
-            <button>Exit</button>
+        <div className="tracker">
+            <div className="tracker__days">
+                {days.map((day) => (
+                    <Day key={day.id} day={day} />
+                ))}
+            </div>
+            <h2 className="tracker__motive">"Financial success is not about luck; it's about managing risks, making informed decisions, and persistently pursuing your goals."</h2>
+            <div className="tracker__align">
+                <button>Exit</button>
+            </div>
         </div>
     );
 };
