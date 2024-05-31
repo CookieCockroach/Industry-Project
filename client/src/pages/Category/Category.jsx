@@ -19,51 +19,53 @@ const CategoriesPage = () => {
   };
 
   return (
-    <div className="categories-page">
-      <h1>Categories</h1>
-      <p>Choose a category to start the quiz:</p>
-      <div className="category-buttons">
+    <>
+      <div className="categories-page">
+        <h1>Categories</h1>
+        <p>Choose a category to start the quiz:</p>
+        <div className="category-buttons">
+          <button
+            className={`category-button ${
+              selectedCategory === "investment" ? "selected" : ""
+            }`}
+            onClick={() => handleCategorySelect("investment")}
+          >
+            Investment
+          </button>
+          <button
+            className={`category-button ${
+              selectedCategory === "budgeting" ? "selected" : ""
+            }`}
+            onClick={() => handleCategorySelect("budgeting")}
+          >
+            Budgeting
+          </button>
+          <button
+            className={`category-button ${
+              selectedCategory === "taxes" ? "selected" : ""
+            }`}
+            onClick={() => handleCategorySelect("taxes")}
+          >
+            Taxes
+          </button>
+          <button
+            className={`category-button ${
+              selectedCategory === "retirement planning" ? "selected" : ""
+            }`}
+            onClick={() => handleCategorySelect("retirement planning")}
+          >
+            Retirement Planning
+          </button>
+        </div>
         <button
-          className={`category-button ${
-            selectedCategory === "investment" ? "selected" : ""
-          }`}
-          onClick={() => handleCategorySelect("investment")}
+          className="start-button"
+          onClick={startQuiz}
+          disabled={!selectedCategory}
         >
-          Investment
-        </button>
-        <button
-          className={`category-button ${
-            selectedCategory === "budgeting" ? "selected" : ""
-          }`}
-          onClick={() => handleCategorySelect("budgeting")}
-        >
-          Budgeting
-        </button>
-        <button
-          className={`category-button ${
-            selectedCategory === "taxes" ? "selected" : ""
-          }`}
-          onClick={() => handleCategorySelect("taxes")}
-        >
-          Taxes
-        </button>
-        <button
-          className={`category-button ${
-            selectedCategory === "retirement planning" ? "selected" : ""
-          }`}
-          onClick={() => handleCategorySelect("retirement planning")}
-        >
-          Retirement Planning
+          Start Quiz
         </button>
       </div>
-      <button
-        className="start-button"
-        onClick={startQuiz}
-        disabled={!selectedCategory}
-      >
-        Start Quiz
-      </button>
-    </div>
+    </>
   );
 };
 
