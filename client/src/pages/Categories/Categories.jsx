@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Dropdown, DropdownButton } from "react-bootstrap";
+import "./Categories.scss";
 
-const Categories = () => {
+const CategoriesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const navigate = useNavigate();
 
@@ -19,40 +19,52 @@ const Categories = () => {
   };
 
   return (
-    <div className="home-page">
-      <h1>Welcome to Wealthsimple Quiz</h1>
-      <p>Improve your financial literacy with daily quizzes.</p>
-      <DropdownButton
-        id="dropdown-category-select"
-        title={
-          selectedCategory ? `Category: ${selectedCategory}` : "Select Category"
-        }
-      >
-        <Dropdown.Item onClick={() => handleCategorySelect("investment")}>
+    <div className="categories-page">
+      <h1>Categories</h1>
+      <p>Choose a category to start the quiz:</p>
+      <div className="category-buttons">
+        <button
+          className={`category-button ${
+            selectedCategory === "investment" ? "selected" : ""
+          }`}
+          onClick={() => handleCategorySelect("investment")}
+        >
           Investment
-        </Dropdown.Item>
-        <Dropdown.Item onClick={() => handleCategorySelect("budgeting")}>
+        </button>
+        <button
+          className={`category-button ${
+            selectedCategory === "budgeting" ? "selected" : ""
+          }`}
+          onClick={() => handleCategorySelect("budgeting")}
+        >
           Budgeting
-        </Dropdown.Item>
-        <Dropdown.Item onClick={() => handleCategorySelect("taxes")}>
+        </button>
+        <button
+          className={`category-button ${
+            selectedCategory === "taxes" ? "selected" : ""
+          }`}
+          onClick={() => handleCategorySelect("taxes")}
+        >
           Taxes
-        </Dropdown.Item>
-        <Dropdown.Item
+        </button>
+        <button
+          className={`category-button ${
+            selectedCategory === "retirement planning" ? "selected" : ""
+          }`}
           onClick={() => handleCategorySelect("retirement planning")}
         >
           Retirement Planning
-        </Dropdown.Item>
-      </DropdownButton>
-      <Button
-        variant="primary"
+        </button>
+      </div>
+      <button
+        className="start-button"
         onClick={startQuiz}
         disabled={!selectedCategory}
       >
         Start Quiz
-      </Button>
-      {/* <Button variant="secondary" onClick={() => navigate('/tracker')}>View Tracker</Button> */}
+      </button>
     </div>
   );
 };
 
-export default Categories;
+export default CategoriesPage;
