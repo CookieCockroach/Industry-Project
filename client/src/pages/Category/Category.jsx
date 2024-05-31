@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Category.scss";
-import logo from "../../assets/Wealthsimple.png";
+
 const CategoriesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const navigate = useNavigate();
@@ -20,7 +20,6 @@ const CategoriesPage = () => {
 
   return (
     <>
-      <img src={logo} className="logo" />
       <div className="categories-page">
         <h1>Categories</h1>
         <p>Choose a category to start the quiz:</p>
