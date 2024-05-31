@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./QuizBody.scss";
 
@@ -61,13 +61,16 @@ const QuizPage = () => {
         <div className="quiz-card-inner">
           <div className="quiz-card-front">
             <div>
-              <h3>{currentQuestion.question}</h3>
+              <div className="question-box">
+                <h3 className="question">{currentQuestion.question}</h3>
+              </div>
               <div className="answers">
                 {currentQuestion.answers.map((answer, index) => (
                   <button
                     key={index}
                     onClick={() => handleAnswerClick(answer)}
                     disabled={showAnswer || hasAnsweredToday}
+                    className="answer-button"
                   >
                     {answer}
                   </button>
@@ -76,17 +79,22 @@ const QuizPage = () => {
             </div>
           </div>
           <div className="quiz-card-back">
-            <div>
-              <h3>Answer</h3>
-              <div className="answer-feedback">
-                <p>
-                  {selectedAnswer === currentQuestion.correctAnswer
-                    ? "Correct!"
-                    : `Incorrect. The correct answer is: ${currentQuestion.correctAnswer}`}
-                </p>
-                <p>Come back tomorrow for the next question!</p>
+            <div className="answer-back">
+              <div className="answer__details">
+                <h3>Answer</h3>
+                <div className="answer-feedback">
+                  <p>
+                    {selectedAnswer === currentQuestion.correctAnswer
+                      ? "Correct!"
+                      : `Incorrect. The correct answer is: ${currentQuestion.correctAnswer}`}
+                  </p>
+                  <p>Come back tomorrow for the next question!</p>
+                </div>
               </div>
             </div>
+            <Link to="/">
+              <button className="home">HOME</button>
+            </Link>
           </div>
         </div>
       </div>
