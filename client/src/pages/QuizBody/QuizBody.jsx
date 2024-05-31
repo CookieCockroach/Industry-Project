@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./QuizBody.scss";
-import logo from "../../assets/Wealthsimple.png";
 
 const QuizPage = () => {
   const [questions, setQuestions] = useState([]);
@@ -57,7 +56,6 @@ const QuizPage = () => {
 
   return (
     <>
-      <img src={logo} className="logo" />
       <div className="quiz-page">
         <h2 className="quiz-page__category">Category: {category}</h2>
         <div className={`quiz-card ${showAnswer ? "flipped" : ""}`}>
