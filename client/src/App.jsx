@@ -1,11 +1,9 @@
-import './App.scss'
-import Tracker from './pages/Tracker/Tracker'
+import './App.css'
 
 function App() {
 
   return (
     <>
-    <Tracker></Tracker>
     </>
   )
 }
