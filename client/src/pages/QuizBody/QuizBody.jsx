@@ -42,12 +42,22 @@ const QuizPage = () => {
     setHasAnsweredToday(lastAnsweredDate === today);
   };
 
+  async function result(result) {
+    await axios.post("/api/questions",result)
+  }
+
   const handleAnswerClick = (answer) => {
     setSelectedAnswer(answer);
     setShowAnswer(true);
     const today = new Date().toISOString().split("T")[0];
     localStorage.setItem("lastAnsweredDate", today);
     setHasAnsweredToday(true);
+    // if(answer === currentQuestion.correctAnswer){
+    //   result({"result": "\u274E"})
+    // }
+    // else{
+    //   result({"result": "\u274C"})
+    // }
   };
 
   if (!currentQuestion) {
