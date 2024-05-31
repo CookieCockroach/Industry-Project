@@ -1,7 +1,7 @@
-import "./App.sass";
+import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import QuizPage from "./pages/Quiz/Quiz";
-import Categories from "./pages/Categories/Categories";
+import QuizPage from "./pages/QuizBody/QuizBody";
+import Categories from "./pages/Category/Category";
 
 function App() {
   return (

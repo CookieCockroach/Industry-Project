@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { Card, Button } from "react-bootstrap";
-import "./Quiz.scss";
+import "./QuizBody.scss";
 
 const QuizPage = () => {
   const [questions, setQuestions] = useState([]);
